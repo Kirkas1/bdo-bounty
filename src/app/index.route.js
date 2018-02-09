@@ -1,21 +1,21 @@
 (function() {
-  'use strict';
+	'use strict';
 
-  angular
-    .module('bdoBounty')
-    .config(routerConfig);
+	angular
+		.module('bdoBounty')
+		.config(routerConfig);
 
-  /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+	/** @ngInject */
+	function routerConfig($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('home', {
+				url: '/',
+				templateUrl: 'app/main/main.html',
+				controller: 'MainController',
+				controllerAs: 'vm'
+			});
 
-    $urlRouterProvider.otherwise('/');
-  }
+		$urlRouterProvider.otherwise('/');
+	}
 
 })();

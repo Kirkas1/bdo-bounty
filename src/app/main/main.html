@@ -1,19 +1,32 @@
 <div class="container app-container">
-	<div class="home-header row no-padding">
-		<div class="header-section col-md-8 no-padding">
+	<div class="home-header row">
+		<div class="header-section col-md-10 no-padding">
 			<h1>BDO Bounty</h1>
 		</div>
-		<div class="button-section col-md-4 no-padding pull-right">
-			<button class="btn btn-primary">Sign up</button>
-			<button class="btn btn-primary">Log In</button>
+		<div class="button-section col-md-2 no-padding">
+			<button class="btn btn-primary" ng-click="vm.openModal(vm.modalTypes.SIGN_UP)">Sign up</button>
+			<button class="btn btn-primary" ng-click="vm.openModal(vm.modalTypes.LOG_IN)">Log In</button>
 		</div>
 	</div>
-	<hr>
-	<div class="home-tabs row no-padding">
-		<h2>{{ vm.greeting }}</h2>
+	<div class="section-separator row"></div>
+	<div class="home-tabs row">
+		<uib-tabset active="0">
+			<uib-tab index="0" heading="Bounty Hunting">
+				<h2>Bounties!</h2>
+			</uib-tab>
+			<uib-tab index="1" heading="Boss Scrolls">
+				<h2>Scrolls!</h2>
+			</uib-tab>
+			<uib-tab index="2" heading="Grinding">
+				<h2>Grinding!</h2>
+			</uib-tab>
+			<uib-tab index="3" heading="Hunting">
+				<h2>Hunting!</h2>
+			</uib-tab>
+		</uib-tabset>
 	</div>
-	<hr>
-	<div class="home-footer row no-padding">
+	<div class="section-separator row"></div>
+	<div class="home-footer row">
 		FOOTER
 	</div>
 </div>

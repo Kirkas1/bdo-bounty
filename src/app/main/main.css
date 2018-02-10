@@ -1,5 +1,13 @@
-/* On the same row as a h1 so mirroring its spacing */ 
+/* On the same row as a h1 so mirroring its spacing */
 .button-section {
 	margin-top: 20px;
 	margin-bottom: 10px;
+}
+
+.section-separator {
+	height: 2px;
+	background-color: #000;
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

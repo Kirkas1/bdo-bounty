@@ -3,11 +3,9 @@
 
 	describe('controllers', function() {
 		var vm;
-		var $timeout;
-		var toastr;
 
 		beforeEach(module('bdoBounty'));
-		beforeEach(inject(function(_$controller_, _$timeout_) {
+		beforeEach(inject(function(_$controller_) {
 
 			vm = _$controller_('MainController');
 			$timeout = _$timeout_;

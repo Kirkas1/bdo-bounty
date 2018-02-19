@@ -6,17 +6,23 @@ export class MainController {
 
 	awesomeThings = [];
 	newThing = '';
+	loading = false;
 
 	/*@ngInject*/
-	constructor($http) {
+	constructor($http, $log) {
 		this.$http = $http;
+		this.$log = $log;
 	}
 
 	$onInit() {
-		// this.$http.get('/api/things')
-		// 	.then(response => {
-		// 		this.awesomeThings = response.data;
-		// 	});
+		this.$log.debug("Ya we're doing it");
+		this.loading = true;
+		this.$http.get('/api/things')
+			.then(response => {
+				this.$log.debug("Wowzers!!", response);
+				this.bountyCards = response.data;
+				this.loading = false;
+			});
 	}
 
 	addThing() {

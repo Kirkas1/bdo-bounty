@@ -1,7 +1,13 @@
 <div class="container">
 	<uib-tabset active="active">
 		<uib-tab index="0" heading="Bounty Hunting">
-			<h2>Bounties!</h2>
+			<p ng-if="$ctrl.loading">
+				Loading . . .
+			</p>
+			<!--  Start bounty card hopefully make this directive once I figure that out-->
+			<div class="bounty-card" ng-repeat="card in $ctrl.bountyCards track by $index">
+				{{ card.user.name }}
+			</div>
 		</uib-tab>
 		<uib-tab index="1" heading="Boss Scrolls">
 			<h2>Boss Scrolls!</h2>

@@ -3,46 +3,50 @@
 import angular from 'angular';
 
 export default class SignupController {
-  user = {
-    name: '',
-    email: '',
-    password: ''
-  };
-  errors = {};
-  submitted = false;
+	user = {
+		name: '',
+		email: '',
+		password: '',
+		characterName: '',
+		familyName: '',
+		server: '',
+		role: ''
+	};
+	errors = {};
+	submitted = false;
 
 
-  /*@ngInject*/
-  constructor(Auth, $state) {
-    this.Auth = Auth;
-    this.$state = $state;
-  }
+	/*@ngInject*/
+	constructor(Auth, $state) {
+		this.Auth = Auth;
+		this.$state = $state;
+	}
 
-  register(form) {
-    this.submitted = true;
+	register(form) {
+		this.submitted = true;
 
-    if(form.$valid) {
-      return this.Auth.createUser({
-        name: this.user.name,
-        email: this.user.email,
-        password: this.user.password
-      })
-        .then(() => {
-          // Account created, redirect to home
-          this.$state.go('main');
-        })
-        .catch(err => {
-          err = err.data;
-          this.errors = {};
+		if (form.$valid) {
+			return this.Auth.createUser({
+					name: this.user.name,
+					email: this.user.email,
+					password: this.user.password
+				})
+				.then(() => {
+					// Account created, redirect to home
+					this.$state.go('main');
+				})
+				.catch(err => {
+					err = err.data;
+					this.errors = {};
 
-          // Update validity of form fields that match the sequelize errors
-          if(err.name) {
-            angular.forEach(err.fields, (error, field) => {
-              form[field].$setValidity('mongoose', false);
-              this.errors[field] = err.message;
-            });
-          }
-        });
-    }
-  }
+					// Update validity of form fields that match the sequelize errors
+					if (err.name) {
+						angular.forEach(err.fields, (error, field) => {
+							form[field].$setValidity('mongoose', false);
+							this.errors[field] = err.message;
+						});
+					}
+				});
+		}
+	}
 }

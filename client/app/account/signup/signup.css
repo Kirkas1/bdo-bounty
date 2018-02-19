@@ -1,0 +1,36 @@
+.signup-area {
+	width: 60%;
+}
+
+.signup-header {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.signup-header h3 {
+	margin-top: 0px;
+}
+
+.example-block {
+	margin-bottom: 10px;
+}
+
+.image-placeholder {
+	height: 100px;
+	background: gray;
+	border-radius: 5px;
+}
+
+.signup-divider {
+	border: .5px solid gray;
+	margin-top: 5px;
+}
+
+.signup-form {
+	border: 1px solid gray;
+	border-radius: 2px;
+	padding: 5px;
+	padding-top: 20px;
+	background-color: lightgray;
+	font-size: 12px;
+}

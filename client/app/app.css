@@ -43,8 +43,9 @@
 
 /* Component styles are injected through gulp */
 /* inject:css */
+@import 'account/signup/signup.css';
 @import 'admin/admin.css';
 @import 'main/main.css';
 @import '../components/footer/footer.css';
-@import '../components/modal/modal.css';
+@import '../components/navbar/navbar.css';
 /* endinject */

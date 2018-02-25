@@ -70,39 +70,37 @@ function handleError(res, statusCode) {
 export function index(req, res) {
 	var date = new Date();
 
-	var sampleCards = [
-		{
-			user: {
-				name: "Kirkas",
-				karma: 5
-			},
-			reward: {
-				name: "Artisan's Memory",
-				quantity: 10,
-			},
-			dateCreated: new Date(date.getFullYear(), date.getMonth(), 1)
-		}, {
-			user: {
-				name: "Finnius",
-				karma: 4.5
-			},
-			reward: {
-				name: "Pearls",
-				quantity: 1000
-			},
-			dateCreated: new Date(2017, date.getMonth(), 1)
-		}, {
-			user: {
-				name: "Winston",
-				karma: 2
-			},
-			reward: {
-				name: "Pearls",
-				quantity: 10000
-			},
-			dateCreated: new Date()
-		}
-	]
+	var sampleCards = [{
+		user: {
+			name: "Kirkas",
+			karma: 5
+		},
+		reward: {
+			name: "Artisan's Memory",
+			quantity: 10,
+		},
+		dateCreated: new Date(date.getFullYear(), date.getMonth(), 1)
+	}, {
+		user: {
+			name: "Finnius",
+			karma: 4.5
+		},
+		reward: {
+			name: "Pearls",
+			quantity: 1000
+		},
+		dateCreated: new Date(2017, date.getMonth(), 1)
+	}, {
+		user: {
+			name: "Winston",
+			karma: 2
+		},
+		reward: {
+			name: "Pearls",
+			quantity: 10000
+		},
+		dateCreated: new Date()
+	}]
 	return res.status(200).json(sampleCards);
 
 	// return Thing.findAll()

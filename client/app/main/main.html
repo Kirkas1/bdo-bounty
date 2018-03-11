@@ -5,8 +5,55 @@
 				Loading . . .
 			</p>
 			<!--  Start bounty card hopefully make this directive once I figure that out-->
-			<div class="bounty-card" ng-repeat="card in $ctrl.bountyCards track by $index">
-				{{ card.user.name }}
+			<div class="col-md-4" ng-repeat="card in $ctrl.bountyCards track by $index">
+				<div class="bounty-card col-md-12">
+					<div class="info-area col-md-12 no-padding">
+						<div class="profile-area col-md-3 no-padding">
+							<div class="profile-image">
+								<div class="image-placeholder" style="height: 35px;">
+								</div>
+							</div>
+							<div class="username-area">
+								<span>{{ card.user.name }}</span>
+							</div>
+						</div>
+						<div class="bounty-info col-md-9">
+							<div class="col-md-12 no-padding">
+								<div class="col-md-4 no-padding">
+									<p class="description-label">Reward:</p>
+								</div>
+								<div class="col-md-8 no-padding">
+									<p class="description-value">
+										{{ card.reward.quantity}}x {{ card.reward.name }}
+									</p>
+								</div>
+							</div>
+							<div class="col-md-12 no-padding">
+								<div class="col-md-4 no-padding">
+									<p class="description-label">Date Created:</p>
+								</div>
+								<div class="col-md-8 no-padding">
+									<p class="description-value">
+										{{ card.dateCreated | date }}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="lower-area col-md-12 no-padding">
+						<div class="col-md-10 no-padding">
+							<span class="star-text" ng-repeat="star in $ctrl.getArrayOfLength(card.user.karma) track by $index">
+								<i class="fa fa-star"></i>
+							</span>
+							<span class="star-text" ng-if="card.user.halfKarma">
+								<i class="fa fa-star-half"></i>
+							</span>
+						</div>
+						<div class="col-md-2 no-padding">
+							<button class="btn btn-primary btn-sm">Apply</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</uib-tab>
 		<uib-tab index="1" heading="Boss Scrolls">

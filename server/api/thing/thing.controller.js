@@ -79,6 +79,17 @@ export function index(req, res) {
 			name: "Artisan's Memory",
 			quantity: 10,
 		},
+		target: {
+			charName: "Hanazura",
+			famName: "Miraizura",
+			guild: "Mathers",
+			class: "Ranger",
+			level: 63,
+			gearScore: 600,
+			server: "Serendia 5",
+			location: "Titium Valley"
+		},
+		motivation: "This guy would not leave me alone. Big bully.",
 		dateCreated: new Date(date.getFullYear(), date.getMonth(), 1)
 	}, {
 		user: {
@@ -89,6 +100,17 @@ export function index(req, res) {
 			name: "Pearls",
 			quantity: 1000
 		},
+		target: {
+			charName: "Hanazura",
+			famName: "Miraizura",
+			guild: "Mathers",
+			class: "Ranger",
+			level: 63,
+			gearScore: 600,
+			server: "Serendia 5",
+			location: "Titium Valley"
+		},
+		motivation: "This guy would not leave me alone. Big bully.",
 		dateCreated: new Date(2017, date.getMonth(), 1)
 	}, {
 		user: {
@@ -99,6 +121,17 @@ export function index(req, res) {
 			name: "Pearls",
 			quantity: 10000
 		},
+		target: {
+			charName: "Hanazura",
+			famName: "Miraizura",
+			guild: "Mathers",
+			class: "Ranger",
+			level: 63,
+			gearScore: 600,
+			server: "Serendia 5",
+			location: "Titium Valley"
+		},
+		motivation: "This guy would not leave me alone. Big bully.",
 		dateCreated: new Date()
 	}]
 	return res.status(200).json(sampleCards);

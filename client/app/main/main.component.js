@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
+import apply from './apply/index';
 
 export class MainController {
 
@@ -9,9 +10,10 @@ export class MainController {
 	loading = false;
 
 	/*@ngInject*/
-	constructor($http, $log) {
+	constructor($http, $log, $uibModal) {
 		this.$http = $http;
 		this.$log = $log;
+		this.$uibModal = $uibModal;
 	}
 
 	$onInit() {
@@ -30,26 +32,6 @@ export class MainController {
 				// 		quantity: 10,
 				// 	},
 				// 	dateCreated: new Date(date.getFullYear(), date.getMonth(), 1)
-				// }, {
-				// 	user: {
-				// 		name: "Finnius",
-				// 		karma: 4.5
-				// 	},
-				// 	reward: {
-				// 		name: "Pearls",
-				// 		quantity: 1000
-				// 	},
-				// 	dateCreated: new Date(2017, date.getMonth(), 1)
-				// }, {
-				// 	user: {
-				// 		name: "Winston",
-				// 		karma: 2
-				// 	},
-				// 	reward: {
-				// 		name: "Pearls",
-				// 		quantity: 10000
-				// 	},
-				// 	dateCreated: new Date()
 				// }]
 				this.bountyCards = response.data;
 
@@ -75,16 +57,28 @@ export class MainController {
 	}
 
 	getArrayOfLength = function(n) {
-		this.$log.debug("Here");
 		return new Array(Math.floor(n));
 	}
 
 	deleteThing(thing) {
 		this.$http.delete(`/api/things/${thing._id}`);
 	}
+
+	openApplyModal(selectedBounty) {
+		this.$log.debug("Opening Modal for", selectedBounty);
+		var modalInstance = this.$uibModal.open({
+			animation: true,
+			component: 'apply',
+			resolve: {
+				bountyObj: selectedBounty
+			}
+		});
+	}
 }
 
-export default angular.module('bdoBountyApp.main', [uiRouter])
+export default angular.module('bdoBountyApp.main', [
+		uiRouter
+	])
 	.config(routing)
 	.component('main', {
 		template: require('./main.html'),

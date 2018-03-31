@@ -1,0 +1,53 @@
+<div class="modal-header">
+   <h3>Apply to Bounty</h3>
+</div>
+<div class="modal-body container-fluid">
+   <form class="apply-form">
+      <div class="form-group col-sm-6">
+         <label>Estimated Level</label>
+         <input type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.target.level" disabled/>
+      </div>
+      <div class="form-group col-sm-6">
+         <label>Estimated Gear Score</label>
+         <input type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.target.gearScore" disabled/>
+      </div>
+      <div class="form-group col-sm-6">
+         <label>Last Known Server</label>
+         <input type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.target.server" disabled/>
+      </div>
+      <div class="form-group col-sm-6">
+         <label>Last Known Location</label>
+         <input type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.target.location" disabled/>
+      </div>
+
+      <div class="col-sm-12">
+         <hr class="signup-divider">
+      </div>
+
+      <div class="form-group col-sm-6">
+         <label>Reward</label>
+         <input type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.reward.name" disabled/>
+      </div>
+      <div class="form-group col-sm-6">
+         <label>Quantity</label>
+         <input type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.reward.quantity" disabled/>
+      </div>
+      <div class="form-group col-sm-12">
+         <label>Motivation</label>
+         <textarea type="text" name="name" class="form-control"
+                ng-model="$ctrl.bountyObj.motivation" disabled></textarea>
+      </div>
+
+      <div class="form-group col-sm-12">
+         <button class="btn btn-default btn-register pull-right" type="submit">
+            Apply
+         </button>
+      </div>
+   </form>
+</div>
